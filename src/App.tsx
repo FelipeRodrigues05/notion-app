@@ -1,4 +1,4 @@
-import Editor from "./components/Editor";
+import WebEditor from "./components/WebEditor";
 
 export default function App() {
   return (
@@ -12,8 +12,8 @@ export default function App() {
               <button className="w-4 h-4 bg-zinc-500 group-hover:bg-green-500 rounded-full" />
             </div>
           </aside>
-          <main className="p-2">
-            <Editor />
+          <main className="p-2 h-[800px] overflow-y-auto scrollbar-thin scrollbar-thumb-zinc-700 scrollbar-track-zinc-800">
+            <WebEditor />
           </main>
         </div>
       </div>
