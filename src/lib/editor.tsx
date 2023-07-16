@@ -1,9 +1,13 @@
+import Color from "@tiptap/extension-color";
 import Document from "@tiptap/extension-document";
+import FontFamily from "@tiptap/extension-font-family";
 import Placeholder from "@tiptap/extension-placeholder";
 import TextAlign from "@tiptap/extension-text-align";
+import TextStyle from "@tiptap/extension-text-style";
 import Typography from "@tiptap/extension-typography";
 import { Editor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
+import { FontSize } from "../plugins/fontSize";
 
 const editor = new Editor({
   editorProps: {
@@ -29,10 +33,13 @@ const editor = new Editor({
     }),
     Typography,
     TextAlign.configure({
-      types: ['paragraph', 'heading']
+      types: ["paragraph", "heading"],
     }),
+    TextStyle,
+    FontFamily,
+    FontSize,
+    Color,
   ],
 });
 
-
-export default editor
+export default editor;
