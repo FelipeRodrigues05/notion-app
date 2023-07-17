@@ -12,7 +12,7 @@ export default function App() {
               <button className="w-4 h-4 bg-zinc-200 dark:bg-zinc-500 group-hover:bg-green-500 rounded-full" />
             </div>
           </aside>
-          <main className="p-2 max-h-screen min-h-full overflow-y-auto scrollbar-thin scrollbar-track-zinc-300 scrollbar-thumb-zinc-400 dark:scrollbar-track-zinc-800 dark:scrollbar-thumb-zinc-600">
+          <main className="p-2 max-h-screen min-h-screen overflow-y-auto scrollbar-thin scrollbar-track-zinc-300 scrollbar-thumb-zinc-400 dark:scrollbar-track-zinc-800 dark:scrollbar-thumb-zinc-600">
             <WebEditor />
           </main>
         </div>
