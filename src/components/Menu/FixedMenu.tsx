@@ -30,7 +30,7 @@ export default function FixedMenu({ editor }: FixedMenuProps) {
   const [hiddenHighlight, setHiddenHighlight] = useState(false);
 
   return (
-    <div className="sticky top-0 flex flex-row items-center justify-center prose prose-invert bg-zinc-900 rounded-2xl px-3 mt-2 z-10 min-w-full opacity-100">
+    <div className="sticky top-0 flex flex-row items-center justify-center prose prose-invert bg-zinc-500 dark:bg-zinc-900 rounded-2xl px-3 mt-2 z-10 max-w-full">
       <div className="flex">
         <FixedButton
           onClick={() => editor.chain().focus().setTextAlign("left").run()}

@@ -13,7 +13,7 @@ import { FontSize } from "../plugins/fontSize";
 const editor = new Editor({
   editorProps: {
     attributes: {
-      class: "outline-none prose prose-invert",
+      class: "outline-none prose dark:prose-invert",
     },
   },
   extensions: [

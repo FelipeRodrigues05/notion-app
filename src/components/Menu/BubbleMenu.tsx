@@ -1,15 +1,20 @@
 import { BubbleMenu, Editor } from "@tiptap/react";
+import {
+  RxCode,
+  RxFontBold,
+  RxFontItalic,
+  RxStrikethrough,
+} from "react-icons/rx";
 import { BubbleButton } from "../Button";
-import { RxCode, RxFontBold, RxFontItalic, RxStrikethrough } from "react-icons/rx";
 
 interface HoverMenuProps {
   editor: Editor;
 }
 
-export default function HoverMenu({editor}: HoverMenuProps) {
+export default function HoverMenu({ editor }: HoverMenuProps) {
   return (
     <BubbleMenu
-      className="bg-zinc-700 shadow-lg border border-zinc-600 shadow-black/20 rounded-lg overflow-y-auto flex divide-x divide-zinc-600"
+      className="bg-zinc-500 border-zinc-400 dark:bg-zinc-700 shadow-lg border dark:border-zinc-600 shadow-black/20 rounded-lg overflow-x-auto flex divide-x divide-zinc-600 -mb-1"
       editor={editor}
     >
       <div className="flex items-center">
