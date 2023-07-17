@@ -1,9 +1,9 @@
 import { Editor } from "@tiptap/react";
 import { ComponentProps, useState } from "react";
-import { GoListOrdered } from "react-icons/go";
+import { BiFontColor } from "react-icons/bi";
 import { FaSquare } from "react-icons/fa";
+import { GoListOrdered } from "react-icons/go";
 import {
-  RxColorWheel,
   RxDividerVertical,
   RxFontFamily,
   RxFontSize,
@@ -17,7 +17,8 @@ import {
 import { FixedButton } from "../Button";
 import { fontFamily } from "../TextStyles/FontFamily";
 import { fontSize } from "../TextStyles/FontSize";
-import TextColor, { color } from "../TextStyles/TextColor";
+import HighlightColor from "../TextStyles/HighlightColor";
+import TextColor from "../TextStyles/TextColor";
 import DropdownMenu from "./DropdownMenu";
 
 interface FixedMenuProps extends ComponentProps<"div"> {
@@ -25,10 +26,9 @@ interface FixedMenuProps extends ComponentProps<"div"> {
 }
 
 export default function FixedMenu({ editor }: FixedMenuProps) {
-  const [hidden, setHidden] = useState(false);
+  const [hiddenText, setHiddenText] = useState(false);
+  const [hiddenHighlight, setHiddenHighlight] = useState(false);
 
-  console.log(color);
-  
   return (
     <div className="sticky top-0 flex flex-row items-center justify-center prose prose-invert bg-zinc-900 rounded-2xl px-3 mt-2 z-10 min-w-full opacity-100">
       <div className="flex">
@@ -69,9 +69,13 @@ export default function FixedMenu({ editor }: FixedMenuProps) {
             icon={<RxFontSize className="w-5 h-5" />}
           />
         </FixedButton>
-        <FixedButton onClick={() => setHidden(!hidden)}>
-          <FaSquare className={`w-5 h-5 text-${color}`} />
-          <TextColor hidden={hidden} />
+        <FixedButton onClick={() => setHiddenText(!hiddenText)}>
+          <BiFontColor className={`w-5 h-5`} />
+          <TextColor hidden={hiddenText} />
+        </FixedButton>
+        <FixedButton onClick={() => setHiddenHighlight(!hiddenHighlight)}>
+          <FaSquare className={`w-5 h-5`} />
+          <HighlightColor hidden={hiddenHighlight} />
         </FixedButton>
       </div>
 

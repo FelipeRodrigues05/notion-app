@@ -1,13 +1,13 @@
 import { CompactPicker } from "react-color";
 import editor from "../../lib/editor";
 
-interface TextColorPickerProps {
+interface HighlightMenuProps {
   hidden: boolean;
 }
 
-export default function TextColor(props: TextColorPickerProps) {
+export default function HighlightColor(props: HighlightMenuProps) {
   function handleChange(colorHex: any) {
-    editor.chain().focus().setColor(colorHex).run();
+    editor.chain().focus().toggleHighlight({ color: colorHex }).run();
   }
 
   return props.hidden ? (

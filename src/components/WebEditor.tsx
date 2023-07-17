@@ -11,7 +11,7 @@ export default function WebEditor() {
       <FixedMenu editor={editor} />
       <EditorContent
         editor={editor}
-        className="max-w-[700px] mx-auto pt-16 prose prose-invert"
+        className="max-w-[40rem] mx-auto pt-16 md:pt-8 md:pl-8 sm:pt-4 sm:pl-4"
       />
 
       {editor && <HoverMenu editor={editor} />}
