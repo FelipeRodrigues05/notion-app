@@ -19,7 +19,7 @@ export function FixedButton(props: ButtonProps) {
   return (
     <>
       <button
-        className="p-1 text-md text-zinc-300 flex items-center gap-1.5 font-medium leading-none hover:text-zinc-50"
+        className="p-1 text-md text-zinc-50 brightness-75 flex items-center gap-1.5 font-medium leading-none hover:brightness-110"
         {...props}
       />
     </>

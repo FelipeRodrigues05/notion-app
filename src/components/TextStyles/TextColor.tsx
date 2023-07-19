@@ -13,7 +13,7 @@ export default function TextColor(props: TextColorPickerProps) {
   return props.hidden ? (
     <CompactPicker
       onChangeComplete={(e) => handleChange(e.hex)}
-      className="absolute bg-zinc-900 top-4 -left-5 p-2 text-zinc-200 rounded-b-md drop-shadow-md shadow-black/30"
+      className="absolute p-2 bg-zinc-900 top-4 -left-5 text-zinc-200 rounded-b-md drop-shadow-md shadow-black/30"
     />
   ) : (
     <></>

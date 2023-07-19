@@ -4,7 +4,7 @@ import { RxChevronDown, RxChevronRight } from "react-icons/rx";
 import editor from "../../lib/editor";
 
 interface DropdownMenuProps {
-  icon: ReactNode;
+  icon?: ReactNode;
   items: DropdownItems;
 }
 
@@ -17,8 +17,6 @@ interface DropdownItems extends Array<DropdownItem> {}
 
 export default function DropdownMenu({ icon, items }: DropdownMenuProps) {
   function handleSelect(item: string) {
-    // PEGAR O VALOR SELECIONADO
-    console.log(item);
     editor.chain().focus().setFontFamily(item).run();
     editor.chain().focus().setFontSize(item).run();
   }
@@ -28,7 +26,7 @@ export default function DropdownMenu({ icon, items }: DropdownMenuProps) {
       options={items}
       onChange={(e) => handleSelect(e.value)}
       controlClassName="flex flex-row items-center text-sm leading-none"
-      menuClassName="absolute flex flex-col gap-1.5 p-2 text-sm bg-zinc-900 rounded-b-lg"
+      menuClassName="absolute flex flex-col gap-2 p-2 text-sm bg-zinc-900 rounded-b-lg overflow-y-auto"
       placeholder={<span>{icon}</span>}
       arrowClosed={
         <span>

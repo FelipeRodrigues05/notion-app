@@ -10,7 +10,7 @@
   height: 0;
   pointer-events: none;
 
-  @apply text-[rgb(82,82,91)];
+  @apply text-[rgb(95,95,104)];
 }
 
 * {

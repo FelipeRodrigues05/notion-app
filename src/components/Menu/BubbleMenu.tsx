@@ -14,7 +14,7 @@ interface HoverMenuProps {
 export default function HoverMenu({ editor }: HoverMenuProps) {
   return (
     <BubbleMenu
-      className="bg-zinc-500 border-zinc-400 dark:bg-zinc-700 shadow-lg border dark:border-zinc-600 shadow-black/20 rounded-lg overflow-x-auto flex divide-x divide-zinc-600 -mb-1"
+      className="flex -mb-1 overflow-x-auto border divide-x rounded-lg shadow-lg bg-zinc-500 border-zinc-400 dark:bg-zinc-700 dark:border-zinc-600 shadow-black/20 divide-zinc-600"
       editor={editor}
     >
       <div className="flex items-center">

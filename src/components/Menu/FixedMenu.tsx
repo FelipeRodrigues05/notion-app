@@ -1,7 +1,6 @@
-import { Editor } from "@tiptap/react";
-import { ComponentProps, useState } from "react";
+import { useState } from "react";
+import { AiOutlineRedo, AiOutlineUndo } from "react-icons/ai";
 import { BiFontColor } from "react-icons/bi";
-import { FaSquare } from "react-icons/fa";
 import { GoListOrdered } from "react-icons/go";
 import {
   RxDividerVertical,
@@ -14,23 +13,18 @@ import {
   RxTextAlignRight,
 } from "react-icons/rx";
 
+import editor from "../../lib/editor";
 import { FixedButton } from "../Button";
 import { fontFamily } from "../TextStyles/FontFamily";
 import { fontSize } from "../TextStyles/FontSize";
-import HighlightColor from "../TextStyles/HighlightColor";
 import TextColor from "../TextStyles/TextColor";
 import DropdownMenu from "./DropdownMenu";
 
-interface FixedMenuProps extends ComponentProps<"div"> {
-  editor: Editor;
-}
-
-export default function FixedMenu({ editor }: FixedMenuProps) {
+export default function FixedMenu() {
   const [hiddenText, setHiddenText] = useState(false);
-  const [hiddenHighlight, setHiddenHighlight] = useState(false);
 
   return (
-    <div className="sticky top-0 flex flex-row items-center justify-center prose prose-invert bg-zinc-500 dark:bg-zinc-900 rounded-2xl px-3 mt-2 z-10 max-w-full">
+    <div className="sticky top-0 z-10 flex flex-row items-center justify-center max-w-full px-3 mt-2 prose prose-invert rounded-2xl bg-zinc-500 dark:bg-zinc-900">
       <div className="flex">
         <FixedButton
           onClick={() => editor.chain().focus().setTextAlign("left").run()}
@@ -73,10 +67,6 @@ export default function FixedMenu({ editor }: FixedMenuProps) {
           <BiFontColor className={`w-5 h-5`} />
           <TextColor hidden={hiddenText} />
         </FixedButton>
-        <FixedButton onClick={() => setHiddenHighlight(!hiddenHighlight)}>
-          <FaSquare className={`w-5 h-5`} />
-          <HighlightColor hidden={hiddenHighlight} />
-        </FixedButton>
       </div>
 
       <RxDividerVertical />
@@ -91,6 +81,17 @@ export default function FixedMenu({ editor }: FixedMenuProps) {
           onClick={() => editor.chain().focus().toggleBulletList().run()}
         >
           <RxListBullet className="w-5 h-5" />
+        </FixedButton>
+      </div>
+
+      <RxDividerVertical />
+
+      <div className="flex">
+        <FixedButton onClick={() => editor.chain().focus().undo().run()}>
+          <AiOutlineUndo className="w-5 h-5" />
+        </FixedButton>
+        <FixedButton onClick={() => editor.chain().focus().redo().run()}>
+          <AiOutlineRedo className="w-5 h-5" />
         </FixedButton>
       </div>
     </div>
