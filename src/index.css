@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Borel&family=Caveat&family=Dancing+Script&family=Fira+Code&family=Handjet&family=Inter&family=JetBrains+Mono&family=Open+Sans&family=Oswald&family=Pacifico&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.ProseMirror .is-empty::before {
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+
+  @apply text-[rgb(95,95,104)];
+}
+
+.w-tc-editor {
+  font-family: "JetBrains Mono", monospace;
+}
