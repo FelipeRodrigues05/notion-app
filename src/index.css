@@ -1,10 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Borel&family=Caveat&family=Dancing+Script&family=Fira+Code&family=Handjet&family=Inter&family=JetBrains+Mono&family=Open+Sans&family=Oswald&family=Pacifico&display=swap");
-@tailwind base;
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Caveat&family=Dancing+Script&family=Fira+Code&family=Handjet&family=Inter&family=JetBrains+Mono&family=Open+Sans&family=Oswald&family=Pacifico&family=Poppins:wght@400;700&display=swap');@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .ProseMirror .is-empty::before {
@@ -18,4 +17,25 @@ body {
 
 .w-tc-editor {
   font-family: "JetBrains Mono", monospace;
+}
+
+ul[data-type="taskList"] {
+  list-style: none;
+  padding: 0;
+}
+
+ul[data-type="taskList"].li {
+  display: flex;
+}
+
+ul[data-type="taskList"].li,
+.div {
+  flex: 1 1 auto;
+}
+ul[data-type="taskList"].li,
+.div,
+.label {
+  flex: 0 0 auto;
+  margin-right: 0.5rem;
+  user-select: none;
 }

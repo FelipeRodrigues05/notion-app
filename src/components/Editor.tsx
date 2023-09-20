@@ -14,7 +14,7 @@ export default function Editor() {
     <>
       <EditorContent
         editor={editor}
-        className="mx-auto md:pt-8 md:pl-8 sm:pt-8 lg:max-w-[50rem] md:max-w-[30rem] sm:max-w-[25rem] min-h-[44rem]"
+        className="mx-auto md:pt-8 sm:pt-8 lg:max-w-[50rem] md:max-w-[30rem] sm:max-w-[25rem] min-h-[44rem]"
       />
       <StylingMenu />
 

@@ -3,7 +3,7 @@ import { X } from "@phosphor-icons/react";
 interface CustomModalHeaderProps {
   title: string;
 
-  onCloseFunction(): any;
+  onCloseFunction(): void;
 }
 
 export default function CustomModalHeader({
@@ -16,7 +16,7 @@ export default function CustomModalHeader({
         {title}
       </p>
       <button onClick={onCloseFunction}>
-        <X className="text-zinc-600 dark:text-zinc-100 w-6 h-6 items-end hover:text-red-500 dark:hover:text-red-500" />
+        <X className="text-zinc-600 dark:text-zinc-100 w-6 h-6 items-end hover:text-red-500 dark:hover:text-red-500 transition-all duration-300" />
       </button>
     </div>
   );

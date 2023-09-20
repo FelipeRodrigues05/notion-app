@@ -4,7 +4,6 @@ import {
   Broom,
   CodeSimple,
   FloppyDisk,
-  ListChecks,
   ListDashes,
   ListNumbers,
   TextAlignCenter,
@@ -38,8 +37,8 @@ export default function StylingMenu() {
 
   function handleSaveFile() {
     if (!(fileName == "")) {
-      let content = editor.storage.markdown.getMarkdown();
-      let file = new File([content], `${fileName}.md`);
+      const content = editor.storage.markdown.getMarkdown();
+      const file = new File([content], `${fileName}.md`);
       saveAs(file);
 
       setFileName("");
@@ -93,7 +92,7 @@ export default function StylingMenu() {
 
           <SelectMenu.Root icon={BiFontSize} itemList={fontsSize} />
 
-          <SelectMenu.Color icon={BiFontColor}></SelectMenu.Color>
+          <SelectMenu.Color icon={BiFontColor} />
           <Menu.Button
             icon={BiHighlight}
             onClick={() => editor.chain().focus().toggleHighlight().run()}
@@ -124,11 +123,11 @@ export default function StylingMenu() {
             icon={ListDashes}
             onClick={() => editor.chain().focus().toggleBulletList().run()}
           />
+
           <Menu.Button
             icon={ListNumbers}
             onClick={() => editor.chain().focus().toggleOrderedList().run()}
           />
-          <Menu.Button icon={ListChecks} />
         </Menu.Section>
 
         <Menu.Section>
@@ -177,17 +176,17 @@ export default function StylingMenu() {
           <input
             required
             type="text"
-            placeholder="File Name"
+            placeholder="Filename"
             value={fileName}
             onChange={(e) => setFileName(e.target.value)}
-            className="p-2 bg-zinc-300 dark:bg-zinc-900 min-w-full text-zinc-800 dark:text-zinc-400 outline-none rounded-md text-sm"
+            className="p-2 bg-zinc-500 dark:bg-zinc-900 min-w-full text-zinc-300 dark:text-zinc-400 outline-none rounded-md text-sm placeholder:text-zinc-300 dark:placeholder:text-zinc-400"
           />
           <span className="text-xs text-red-600" hidden={showErrorMessage}>
             Filename is required
           </span>
           <button
             onClick={() => handleSaveFile()}
-            className="text-zinc-400 bg-zinc-300 dark:bg-zinc-700 rounded-md py-1 text-sm hover:bg-zinc-500 dark:hover:bg-zinc-900 hover:text-zinc-300 transition-all duration-300 mt-2"
+            className="text-zinc-600 dark:text-zinc-100 bg-zinc-200 dark:bg-zinc-700 rounded-md py-1 text-sm hover:bg-zinc-600 dark:hover:bg-zinc-900 hover:text-zinc-300 transition-all duration-300 mt-2 shadow-xl"
           >
             Save
           </button>

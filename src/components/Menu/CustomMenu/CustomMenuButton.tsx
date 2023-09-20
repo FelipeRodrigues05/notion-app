@@ -12,7 +12,7 @@ export default function CustomMenuButton(props: CustomMenuButtonProps) {
         {...props}
       >
         {
-          <props.icon className="lg:w-7 lg:h-7 md:w-6 md:h-6 sm:w-5 sm:h-5 text-md leading-normal font-medium" />
+          <props.icon className="lg:w-7 lg:h-7 md:w-6 md:h-6 sm:w-6 sm:h-6 text-md leading-normal font-medium" />
         }
       </button>
     </>

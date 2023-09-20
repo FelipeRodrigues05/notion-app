@@ -20,7 +20,7 @@ export default function EditorBlock() {
         minHeight={80}
         padding={20}
         spellCheck={false}
-        className="text-sm font-mono rounded bg-zinc-900"
+        className="text-sm font-mono rounded dark:bg-zinc-900 bg-zinc-500"
       />
     </NodeViewWrapper>
   );

@@ -1,6 +1,7 @@
 import { GearFine } from "@phosphor-icons/react";
 import { useEffect, useState } from "react";
-import { BsFillMoonFill, BsFillSunFill, BsWindowDesktop } from "react-icons/bs";
+import { BiDesktop } from "react-icons/bi";
+import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
 import Editor from "./components/Editor";
 import { CustomModal } from "./components/Modal";
 
@@ -20,7 +21,7 @@ function App() {
         break;
       case "light":
         element.classList.remove("dark");
-        localStorage.setItem("theme", "light");
+        localStorage.setItem("theme", "dark");
         break;
       default:
         localStorage.removeItem("theme");
@@ -66,6 +67,7 @@ function App() {
         <CustomModal.Root
           open={showConfig}
           onCloseFunction={() => setShowConfig(!showConfig)}
+          size="sm"
         >
           <CustomModal.Header
             title="Settings"
@@ -81,22 +83,22 @@ function App() {
               </p>
               <div className="items-end pr-6">
                 <button
-                  className="p-1 text-zinc-600 dark:text-zinc-100 hover:text-blue-500 dark:hover:text-blue-500"
+                  className="p-1 text-zinc-600 dark:text-zinc-100 hover:text-blue-500 dark:hover:text-blue-500 transition-all duration-300"
                   onClick={() => setTheme("dark")}
                 >
                   <BsFillMoonFill className="w-5 h-5" />
                 </button>
                 <button
-                  className="p-1 text-zinc-600 dark:text-zinc-100 hover:text-yellow-500 dark:hover:text-yellow-500"
+                  className="p-1 text-zinc-600 dark:text-zinc-100 hover:text-yellow-500 dark:hover:text-yellow-500 transition-all duration-300"
                   onClick={() => setTheme("light")}
                 >
                   <BsFillSunFill className="w-6 h-6" />
                 </button>
                 <button
-                  className="p-1 text-zinc-600 dark:text-zinc-100 hover:text-cyan-500 dark:hover:text-cyan-500"
+                  className="p-1 text-zinc-600 dark:text-zinc-100 hover:text-cyan-500 dark:hover:text-cyan-500 transition-all duration-300"
                   onClick={() => setTheme("system")}
                 >
-                  <BsWindowDesktop className="w-6 h-6" />
+                  <BiDesktop className="w-6 h-6" />
                 </button>
               </div>
             </div>
